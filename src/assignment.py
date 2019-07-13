@@ -106,7 +106,30 @@ if __name__ == '__main__':
 
             # TODO ensure it only does this when someone is hailing a taxi.
             # That is, an arm is above their head.
-            hail_taxi(image)
+            for k,v in human.body_parts.items():
+                (POSE_COCO_BODY_PARTS[k],v.y)
+                try:
+                    k==4
+                    k==2
+                    if k==4:
+                        print('Y-Coordinate of RWrist is: ' + str(v.y))
+                        RWrist_y = v.y
+                    elif k==7:
+                        print('Y-Coordinate of LWrist is: ' + str(v.y))
+                        LWrist_y = v.y
+                    elif k==2:
+                        print('Y_Coordinate of RShoulder is: ' + str(v.y))
+                        RShoulder_y = v.y
+                    elif k==5:
+                        print('Y-Coordinate of LShoulder is: ' + str(v.y))
+                        LShoulder_y = v.y
+                    elif RWrist_y < RShoulder_y:
+                        hail_taxi(image)
+                    elif LWrist_y < LShoulder_y:
+                        hail_taxi(image)
+                except:
+                    print('No wrist or shoulder found')
+
 
             # Debugging statement: remove before demonstration.
             # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
