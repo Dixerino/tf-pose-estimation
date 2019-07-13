@@ -105,13 +105,45 @@ if __name__ == '__main__':
         for id, human in enumerate(humans):
 
             # TODO ensure it only does this when someone is hailing a taxi.
-            if POSE_COCO_BODY_PARTS[]
+            for k,v in human.body_parts.items():
+                (POSE_COCO_BODY_PARTS[k], v.y)
+                try:
+                    k == 4
+                    k == 2
+                    if k == 4:
+                        print('Y-Coord of RWrist is: ' + str(v.y))
+                        RWrist_y = v.y
+                    elif k == 7:
+                        print('Y-Coord of LWrist is: ' + str(v.y))
+                        LWrist_y = v.y
+                    elif k == 2:
+                        print('Y-Coord of RShoulder is: ' + str(v.y))
+                        RShoulder_y = v.y
+                    elif k == 5:
+                        print('Y-Coord of LShoulder is: ' + str(v.y))
+                        LShoulder_y = v.y
+                    elif RWrist_y < RShoulder_y:
+                        hail_taxi(image)
+                    elif LWrist_y < LShoulder_y:
+                        hail_taxi(image)
+                except:
+                    print('No WRIST OR SHOULDER FOUND')
+
+
+
+            #Body_Part_Coord = [(POSE_COCO_BODY_PARTS[k], v.y) for k,v in human.body_parts.items()]:
+            #print(Body_Part_Coord)
+            #for n in range(len(Body_Part_Coord)):
+            #    if Body_Part_Coord[n][0] == 'RWrist':
+            #        print('Wrist FOUND')
+            #        RWrist_y = Body_Part_Coord[n][1]
+            #        print(RWrist_y)
+            
             # That is, an arm is above their head.
-            hail_taxi(image)
+            #hail_taxi(image)
 
             # Debugging statement: remove before demonstration.
-            print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
-
+            #print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
         # drawing lines on an image
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
 
