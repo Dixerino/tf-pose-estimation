@@ -109,6 +109,8 @@ if __name__ == '__main__':
                 (POSE_COCO_BODY_PARTS[k], v.y)
                 try:
                     k == 4
+                    k == 7
+                    k == 5
                     k == 2
                     if k == 4:
                         print('Y-Coord of RWrist is: ' + str(v.y))
