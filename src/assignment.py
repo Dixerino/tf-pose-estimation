@@ -112,16 +112,12 @@ if __name__ == '__main__':
                     k==4
                     k==2
                     if k==4:
-                        print('Y-Coordinate of RWrist is: ' + str(v.y))
                         RWrist_y = v.y
                     elif k==7:
-                        print('Y-Coordinate of LWrist is: ' + str(v.y))
                         LWrist_y = v.y
                     elif k==2:
-                        print('Y_Coordinate of RShoulder is: ' + str(v.y))
                         RShoulder_y = v.y
                     elif k==5:
-                        print('Y-Coordinate of LShoulder is: ' + str(v.y))
                         LShoulder_y = v.y
                     elif RWrist_y < RShoulder_y:
                         hail_taxi(image)
