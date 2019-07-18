@@ -142,6 +142,33 @@ if __name__ == '__main__':
             #        print(RWrist_y)
             
             # That is, an arm is above their head.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            for k,v in human.body_parts.items():
+                (POSE_COCO_BODY_PARTS[k],v.y)       #repeatedly generates a list which correspsonds a body part in dictionary with its received y coordinate
+                try:                                #tests for specific k (body parts), code will only continue if these body parts are present
+                    k==5
+                    k==7                    
+                    k==4
+                    k==2
+                    if k==4:                        
+                        RWrist_y = v.y              #Y-coordinate of Right Wrist
+                    elif k==7:                      
+                        LWrist_y = v.y              #Y-coordinate of Left Wrist
+                    elif k==2:                          
+                        RShoulder_y = v.y           #Y-coordinate of Right Shoulder
+                    elif k==5:
+                        LShoulder_y = v.y           #Y-coordinate of Left Shoulder
+                    elif RWrist_y < RShoulder_y:    #Tests if the right wrist is above the right shoulder
+                        hail_taxi(image)
+                    elif LWrist_y < LShoulder_y:    #Tests if the left wrist is above the left shoulder
+                        hail_taxi(image)
+                except:                             #If none of the body parts are present, don't run the if statement
+                    print('No wrist or shoulder found')
+
+=======
+>>>>>>> 3656ade56634c20342aa7285d6394956509b3dfd
             #hail_taxi(image)
 
             # Debugging statement: remove before demonstration.
@@ -158,3 +185,7 @@ if __name__ == '__main__':
             break
 
     cv2.destroyAllWindows()
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 3656ade56634c20342aa7285d6394956509b3dfd
