@@ -155,7 +155,3 @@ if __name__ == '__main__':
             break
 
     cv2.destroyAllWindows()
-<<<<<<< HEAD
-=======
- 
->>>>>>> 3656ade56634c20342aa7285d6394956509b3dfd
